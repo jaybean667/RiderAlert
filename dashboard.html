@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Medical Info</h2>
+<form method="POST">
+    Name: <input type="text" name="name" value="{{ user.name or '' }}"><br>
+    DOB: <input type="text" name="dob" value="{{ user.dob or '' }}"><br>
+    Conditions: <textarea name="conditions">{{ user.conditions or '' }}</textarea><br>
+    <input type="submit" value="Save">
+</form>
+<br>
+<a href="{{ url_for('qr') }}">Download QR Code</a> |
+<a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
